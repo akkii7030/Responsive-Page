@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Main Container */
+#main {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    flex-wrap: nowrap; /* Prevent wrapping on large screens */
+}
+
+/* Left Section (Text + Header) */
+#left {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align the header to the top */
+    padding: 20px;
+}
+
+/* Navigation */
+#lnav {
+    display: flex;
+    justify-content: space-between; /* Center the header horizontally */
+    width: 100%;
+    padding: 20px 30px;
+    position: relative;
+}
+
+#lnavr {
+    display: flex;
+    align-items: center;
+}
+
+#lnavr a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+#lnavr i {
+    color: royalblue;
+}
+
+/* Centered Text */
+#textcenter {
+    text-align: center;
+    margin-top: auto; /* Push the text towards the center */
+    margin-bottom: auto;
+}
+
+#textcenter h1 {
+    font-size: 90px;
+    font-weight: 900;
+}
+
+#textcenter p {
+    opacity: 0.6;
+    font-size: 12px;
+    line-height: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#textcenter a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+/* Right Section (Images) */
+#right {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top and Bottom Images */
+#rtop, #rbottom {
+    width: 100%;
+    height: 50%; /* Each image takes half the height of the screen */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Images */
+#rtop {
+    background-image: url('./assets/img1.jpg');
+}
+
+#rbottom {
+    background-image: url('./assets/img2.jpg');
+}
+
+/* Media Queries for mobile views */
+@media (max-width: 768px) {
+    #main {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #left {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    #right {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    #rtop, #rbottom {
+        width: 100%;
+        height: 300px; /* Fix height for smaller screens */
+    }
+
+    /* Text adjustments for smaller screens */
+    #textcenter h1 {
+        font-size: 48px;
+    }
+
+    #textcenter p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    #lnavr a {
+        font-size: 12px;
+    }
+
+    #lnavr {
+        flex-direction: row; /* Keep the header layout horizontal */
+    }
+}
